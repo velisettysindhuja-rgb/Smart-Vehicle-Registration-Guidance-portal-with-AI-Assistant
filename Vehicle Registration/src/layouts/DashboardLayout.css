@@ -1,0 +1,43 @@
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--color-background);
+  background-image: 
+    radial-gradient(circle at top, rgba(11, 17, 32, 0.8) 0%, rgba(6, 11, 25, 1) 100%), 
+    url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08' fill-rule='evenodd'%3E%3C!-- Car --%3E%3Cpath d='M25 35c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm-15 0c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zM9.4 20h21.2l3.8-10H15.6L9.4 20zM5 20h2v10H5V20zm30 0h2v10h-2V20zm-4-12H13L7 20v13h2.2c.4 3.4 3.4 6 6.8 6s6.4-2.6 6.8-6h4.4c.4 3.4 3.4 6 6.8 6s6.4-2.6 6.8-6H43V20L31 8z' /%3E%3C!-- Truck --%3E%3Cpath d='M100 90h20v15h8c2.8 0 5 2.2 5 5v15h-8c0 3.3-2.7 6-6 6s-6-2.7-6-6h-16c0 3.3-2.7 6-6 6s-6-2.7-6-6H80V90h20zm5 5v20h10V95h-10z' /%3E%3C!-- Bus --%3E%3Cpath d='M80 20h30c3.3 0 6 2.7 6 6v24h-4c0 3.3-2.7 6-6-6s-6-2.7-6-6H90c0 3.3-2.7 6-6 6s-6-2.7-6-6h-4V26c0-3.3 2.7-6 6-6zM85 26h20v10H85V26z' /%3E%3C!-- Moto/Scooter --%3E%3Cpath d='M15 100c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm20 0c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm-5-15l-10-10H10v4h8l5 5h10v6h-8z' /%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover, 250px;
+  color: var(--color-text);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.dashboard-main {
+  flex: 1;
+  margin-left: 280px; 
+  padding: 2rem 3rem;
+  height: 100vh;
+  overflow-y: auto;
+  background: radial-gradient(circle at top right, rgba(0, 229, 255, 0.05), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(29, 78, 216, 0.05), transparent 50%);
+}
+
+.panel-scroll::-webkit-scrollbar { width: 8px; }
+.panel-scroll::-webkit-scrollbar-track { background: transparent; }
+.panel-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 10px; }
+.panel-scroll::-webkit-scrollbar-thumb:hover { background: var(--color-primary); }
+
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0;
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Light Theme Component Injection */
+[data-theme="light"] .dashboard-wrapper {
+  background-image: 
+    radial-gradient(circle at top, rgba(248, 250, 252, 0.8) 0%, rgba(226, 232, 240, 1) 100%), 
+    url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f172a' fill-opacity='0.05' fill-rule='evenodd'%3E%3C!-- Car --%3E%3Cpath d='M25 35c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm-15 0c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zM9.4 20h21.2l3.8-10H15.6L9.4 20zM5 20h2v10H5V20zm30 0h2v10h-2V20zm-4-12H13L7 20v13h2.2c.4 3.4 3.4 6 6.8 6s6.4-2.6 6.8-6h4.4c.4 3.4 3.4 6 6.8 6s6.4-2.6 6.8-6H43V20L31 8z' /%3E%3C!-- Truck --%3E%3Cpath d='M100 90h20v15h8c2.8 0 5 2.2 5 5v15h-8c0 3.3-2.7 6-6 6s-6-2.7-6-6h-16c0 3.3-2.7 6-6 6s-6-2.7-6-6H80V90h20zm5 5v20h10V95h-10z' /%3E%3C!-- Bus --%3E%3Cpath d='M80 20h30c3.3 0 6 2.7 6 6v24h-4c0 3.3-2.7 6-6-6s-6-2.7-6-6H90c0 3.3-2.7 6-6 6s-6-2.7-6-6h-4V26c0-3.3 2.7-6 6-6zM85 26h20v10H85V26z' /%3E%3C!-- Moto/Scooter --%3E%3Cpath d='M15 100c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm20 0c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm-5-15l-10-10H10v4h8l5 5h10v6h-8z' /%3E%3C/g%3E%3C/svg%3E");
+}
